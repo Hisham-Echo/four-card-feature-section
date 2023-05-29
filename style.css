@@ -1,0 +1,152 @@
+:root {
+    font-size: 15px;
+    /* ## Colors */
+    /* ### Primary */
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+    /* ### Neutral */
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    color: var(--Very-Dark-Blue);
+}
+
+p {
+    color: var(--Grayish-Blue);
+    line-height: 1.8;
+}
+
+h1,
+h2 {
+    font-size: 1.8rem;
+}
+
+h2,
+h3 {
+    font-weight: 600;
+}
+
+body {
+    display: grid;
+    place-items: center;
+}
+
+header,
+main,
+footer {
+    margin: 10px;
+}
+
+header {
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header p {
+    padding: 10px;
+    max-width: 320px;
+}
+/* END HEADER */
+
+/* START  CARDS */
+.cards {
+    max-width: 400px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.cards .double {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card:not(.double) {
+    box-shadow: 0 0 50px 0 hsla(234, 12%, 34%, 0.2);
+}
+
+.card {
+    position: relative;
+    width: calc(100% - 30px);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+}
+
+.cards .double .card {
+    width: 100%;
+}
+
+.card:not(.double) {
+    padding: 30px;
+    box-shadow: 0 3px 15px -3px var(--text);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+@media (min-width: 1000px) {
+    header p {
+        max-width: 520px;
+    }
+
+    .cards {
+        max-width: 1200px;
+        flex-flow: row nowrap;
+    }
+
+    .cards .card:not(.double .card) {
+        width: calc((100% / 3) - 40px);
+    }
+
+    .cards .double .card {
+        width: 100%;
+    }
+}
+
+.one {
+    border-top: 3px solid var(--Cyan, cyan);
+}
+.two {
+    border-top: 3px solid var(--Red, red);
+}
+.three {
+    border-top: 3px solid var(--Orange, orange);
+}
+.four {
+    border-top: 3px solid var(--Blue, blue);
+}
+
+.img {
+    padding-top: 20px;
+    align-self: flex-end;
+}
+/* END CARDS */
